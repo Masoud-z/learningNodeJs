@@ -10,5 +10,9 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.12.7"
+  },
+  "dependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21"
   }
 }
