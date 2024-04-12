@@ -3,10 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const events_1 = __importDefault(require("events"));
-const emitter = new events_1.default();
-emitter.on("message", () => {
-    console.log("message emitted");
+const logger_1 = __importDefault(require("../logger/logger"));
+const logger = new logger_1.default();
+logger.on("logging", ({ message }) => {
+    console.log(message);
 });
-emitter.emit("message");
-//59:37
+logger.log("Hello from logger");

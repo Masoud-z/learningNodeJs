@@ -1,7 +1,9 @@
-const url = "http://dummyURL.com/log";
+import EventEmitter from "events";
 
-function logger(message: string) {
-  console.log(message);
+class Logger extends EventEmitter {
+  log(message: string) {
+    this.emit("logging", { message });
+  }
 }
 
-module.exports = logger;
+export default Logger;

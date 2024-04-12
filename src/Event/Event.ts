@@ -1,11 +1,9 @@
-import EventEmitter from "events";
+import Logger from "../logger/logger";
 
-const emitter = new EventEmitter();
+const logger = new Logger();
 
-emitter.on("message", () => {
-  console.log("message emitted");
+logger.on("logging", ({ message }: { message: string }) => {
+  console.log(message);
 });
 
-emitter.emit("message");
-
-//59:37
+logger.log("Hello from logger");
